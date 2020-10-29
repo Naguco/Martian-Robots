@@ -11,7 +11,7 @@ switch (args[0]) {
         startServer();
         break;
     case "SCRIPT":
-        startScript();
+        startScript(args[1]);
         break;
     case "help":
         showHelp();
