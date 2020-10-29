@@ -6,7 +6,8 @@ export class Game {
     startGame( data ) {
         let dataConverted = convertData(data);
         let gameController = new GameController(dataConverted.boardCoordinates, dataConverted.robots);
-        gameController.start();
+        let output = gameController.start();
+        return output;
     }
 
 }

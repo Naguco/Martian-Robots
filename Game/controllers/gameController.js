@@ -9,7 +9,6 @@ export class GameController {
         this.possibleAiming = ['N', 'E', 'S', 'W'];
         this.possibleForwards = [[0, 1], [1, 0], [0, -1], [-1, 0]]; // North, east, south, west respectively
         this.boardLimitsSaved = [];
-        console.log(this.board);
     }
 
     initializeRobots(robotsArray) {
@@ -23,9 +22,11 @@ export class GameController {
     }
 
     start() {
+        let output = "";
         for (let i = 0; i < this.robots.length; i++) {
-            this.startRobot(this.robots[i]);
+            output += this.startRobot(this.robots[i]) + '\n';
         }
+        return output;
     }
 
     startRobot(robot) {
@@ -42,7 +43,10 @@ export class GameController {
                     break;
             }
         }
-        console.log(robot);
+        if (robot.lost) {
+            return robot.lastCoordinates[0] + ' ' + robot.lastCoordinates[1] + ' ' + robot.lastAiming + ' LOST';
+        }
+        return robot.actualCoordinates[0] + ' ' + robot.actualCoordinates[1] + ' ' + robot.actualAiming;
     }
 
     moveForward(robot) {
