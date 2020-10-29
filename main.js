@@ -1,11 +1,12 @@
 const startServer = require('./Server/server');
 const startScript = require('./Script/script');
+const startCLI = require('./Cli/cli');
 
 const args = process.argv.slice(2);
 
 switch (args[0]) {
     case "CLI":
-        initCLI();
+        startCLI();
         break;
     case "REST":
         startServer();
