@@ -30,7 +30,7 @@ function convertRobots(restLines) {
             array.push(new Object({
                 coordinates: robotCoordinates,
                 aiming: robotAiming,
-                movements: restLines[i+1]
+                movements: restLines[i+1].split("")
             }));
         }
 
