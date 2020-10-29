@@ -16,7 +16,6 @@
     "url": "https://github.com/Naguco/Martian-Robots/issues"
   },
   "homepage": "https://github.com/Naguco/Martian-Robots#readme",
-  "type": "module",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

@@ -1,4 +1,4 @@
-export class Board {
+module.exports = class Board {
 
     constructor(finalX, finalY) {
         this.finalX = finalX;

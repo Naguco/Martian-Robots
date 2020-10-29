@@ -1,7 +1,7 @@
-import { Board } from '../models/board.js';
-import { Robot } from '../models/robot.js';
+const Board = require('../models/board');
+const Robot = require('../models/robot');
 
-export class GameController {
+module.exports = class GameController {
 
     constructor(finalBoardCoordinates, robotsArray) {
         this.board = new Board(finalBoardCoordinates[0], finalBoardCoordinates[1]);

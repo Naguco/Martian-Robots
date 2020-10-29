@@ -1,4 +1,4 @@
-export class Robot {
+module.exports = class Robot {
 
     constructor (firstCoordinates, firstAiming, movements) {
         this.actualCoordinates = firstCoordinates;

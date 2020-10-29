@@ -1,7 +1,7 @@
-import { GameController } from './controllers/gameController.js';
-import { convertData } from './helpers/dataConversion.js';
+const GameController = require('./controllers/gameController');
+const convertData = require('./helpers/dataConversion');
 
-export class Game {
+module.exports = class Game {
 
     startGame( data ) {
         let dataConverted = convertData(data);
@@ -10,4 +10,4 @@ export class Game {
         return output;
     }
 
-}
+};

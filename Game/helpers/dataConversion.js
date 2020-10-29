@@ -1,4 +1,4 @@
-export function convertData(data) {
+module.exports = function convertData(data) {
     let dataConverted = {};
 
     let separatedLines = data.split(/\r?\n/);
@@ -9,7 +9,7 @@ export function convertData(data) {
     dataConverted.robots = convertRobots(separatedLines);
 
     return dataConverted;
-}
+};
 
 function convertBoardCoordinates(firstLine) {
     let array = firstLine.split(/\s+/);
