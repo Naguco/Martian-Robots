@@ -32,28 +32,40 @@ export class GameController {
         while (robot.movementsRemaining.length > 0 && !robot.lost) {
             switch (robot.movementsRemaining[0]) {
                 case 'F':
-                    this.moveForward();
+                    this.moveForward(robot);
                     break;
                 case 'R':
-                    this.moveRight();
+                    this.moveRight(robot);
                     break;
                 case 'L':
-                    this.moveLeft();
+                    this.moveLeft(robot);
                     break;
             }
         }
+        console.log(robot);
     }
 
-    moveForward() {
+    moveForward(robot) {
 
     }
 
-    moveRight() {
-        
+    moveRight(robot) {
+        let index = this.possibleAiming.indexOf(robot.actualAiming);
+        let newIndex = (index + 1) % this.possibleAiming.length;
+        robot.actualAiming = this.possibleAiming[newIndex];
+        robot.lastAiming = this.possibleAiming[index];
+        robot.movementsRemaining.shift();
     }
 
-    moveLeft() {
-
+    moveLeft(robot) {
+        let index = this.possibleAiming.indexOf(robot.actualAiming);
+        let newIndex = (index - 1) % this.possibleAiming.length;
+        if (newIndex < 0) {
+            newIndex = this.possibleAiming.length + newIndex;
+        }
+        robot.actualAiming = this.possibleAiming[newIndex];
+        robot.lastAiming = this.possibleAiming[index];
+        robot.movementsRemaining.shift();
     }
 
 }
