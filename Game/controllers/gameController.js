@@ -5,7 +5,7 @@ export class GameController {
 
     constructor(finalBoardCoordinates, robotsArray) {
         this.board = new Board(finalBoardCoordinates[0], finalBoardCoordinates[1]);
-        this.robots = initializeRobots();
+        this.robots = initializeRobots(robotsArray);
     }
 
     initializeRobots(robotsArray) {

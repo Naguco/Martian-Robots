@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/Naguco/Martian-Robots/issues"
   },
-  "homepage": "https://github.com/Naguco/Martian-Robots#readme"
+  "homepage": "https://github.com/Naguco/Martian-Robots#readme",
+  "type": "module"
 }

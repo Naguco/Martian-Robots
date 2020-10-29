@@ -105,3 +105,6 @@ dist
 
 #jshint
 .jshintrc
+
+#miscelánea
+prueba.js
