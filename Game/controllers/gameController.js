@@ -46,7 +46,20 @@ export class GameController {
     }
 
     moveForward(robot) {
+        if (!this.repeatOthersMistake(robot)) {
+            let index = this.possibleAiming.indexOf(robot.actualAiming);
+            robot.lastCoordinates = [robot.actualCoordinates[0], robot.actualCoordinates[1]];
+            robot.actualCoordinates[0] = robot.actualCoordinates[0] + this.possibleForwards[index][0];
+            robot.actualCoordinates[1] = robot.actualCoordinates[1] + this.possibleForwards[index][1];
 
+            robot.lastAiming = robot.actualAiming;
+    
+            if (this.checkFall(robot)) {
+                robot.lost = true;
+            }
+
+        }
+        robot.movementsRemaining.shift();
     }
 
     moveRight(robot) {
@@ -66,6 +79,29 @@ export class GameController {
         robot.actualAiming = this.possibleAiming[newIndex];
         robot.lastAiming = this.possibleAiming[index];
         robot.movementsRemaining.shift();
+    }
+
+    repeatOthersMistake(robot) {
+        let repeatOthersMistake = false;
+        for (let i = 0; i < this.boardLimitsSaved.length; i++) {
+            if (this.boardLimitsSaved[i][0] == robot.actualCoordinates[0] && 
+                this.boardLimitsSaved[i][1] == robot.actualCoordinates[1] &&
+                this.boardLimitsSaved[i][2] == robot.actualAiming) {
+                    repeatOthersMistake = true;
+                }
+        }
+        return repeatOthersMistake;
+    }
+
+    checkFall(robot) {
+        if (robot.actualCoordinates[0] > this.board.finalX ||
+            robot.actualCoordinates[1] > this.board.finalY ||
+            robot.actualCoordinates[0] < 0 ||
+            robot.actualCoordinates[1] < 0) {
+                this.boardLimitsSaved.push([robot.lastCoordinates[0], robot.lastCoordinates[1], robot.lastAiming]);
+                return true;
+        }
+        return false;
     }
 
 }
