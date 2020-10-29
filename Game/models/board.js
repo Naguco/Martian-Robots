@@ -5,11 +5,11 @@ export class Board {
         this.finalY = finalY;
     }
 
-    get finalX() {
+    get boardFinalX() {
         return this.finalX;
     }
 
-    get finalY() {
+    get boardFinalY() {
         return this.finalY;
     }
 

@@ -1,20 +1,26 @@
 export class Robot {
 
     constructor (firstCoordinates, firstAiming, movements) {
-        this.coordinates = firstCoordinates;
+        this.actualCoordinates = firstCoordinates;
+        this.lastCoordinates = [];
         this.aiming = firstAiming;
-        this.movements = movements;
+        this.movementsRemaining = movements;
+        this.lost = false;
     }
 
-    get robotMovements() {
-        return this.movements;
+    get robotMovementsRemaining() {
+        return this.movementsRemaining;
     }
 
-    get coordinates() {
-        return this.coordinates;
+    get robotActualCoordinates() {
+        return this.actualCoordinates;
     }
 
-    get aiming() {
+    get robotlastCoordinates() {
+        return this.lastCoordinates;
+    }
+
+    get robotAiming() {
         return this.aiming;
     }
 

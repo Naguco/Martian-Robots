@@ -1,15 +1,16 @@
-import { Board } from '../models/board';
-import { Robot } from '../models/robot';
+import { Board } from '../models/board.js';
+import { Robot } from '../models/robot.js';
 
 export class GameController {
 
     constructor(finalBoardCoordinates, robotsArray) {
         this.board = new Board(finalBoardCoordinates[0], finalBoardCoordinates[1]);
-        this.robots = initializeRobots(robotsArray);
+        this.robots = this.initializeRobots(robotsArray);
+        console.log(this.board);
+        console.log(this.robots);
     }
 
     initializeRobots(robotsArray) {
-
         let initilaizedRobots = [];
 
         for (let i = 0; i < robotsArray.length; i++) {
@@ -19,6 +20,8 @@ export class GameController {
         return initilaizedRobots;
     }
 
-
+    start() {
+        
+    }
 
 }
