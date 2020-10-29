@@ -1,15 +1,20 @@
-require('./serverConfig.js');
+module.exports = function startServer() {
 
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+    require('./serverConfig.js');
 
-const app = express();
+    const express = require('express');
+    const cors = require('cors');
+    const bodyParser = require('body-parser');
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+    const app = express();
 
-app.use('/api', require('./routes/routes.js'));
+    app.use(cors());
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
 
-app.listen(process.env.PORT, () => { console.log('Escuchando puerto: ', process.env.PORT); });
+    app.use('/api', require('./routes/routes.js'));
+
+    app.listen(process.env.PORT, () => { console.log('Escuchando puerto: ', process.env.PORT); });
+
+
+};
