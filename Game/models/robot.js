@@ -9,4 +9,4 @@ module.exports = class Robot {
         this.lost = false;
     }
 
-}
+};

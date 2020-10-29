@@ -32,7 +32,7 @@ function showHelp() {
 
     cliText = 'Start this project as a CLI. Command Line will ask you for an input, and inmediately will prompt you the solution.';
     restText = 'Start a localhost server at port 3000. With a post method to http://localhost:3000/api/RobotsGame with a body that contains the data like { data: "your_input_goes_here"}.';
-    scriptText = 'Edit your input on file /Script/script.js. The output will be prompted on your command line.';
+    scriptText = 'Send your input in the second argument of the script execution. The output will be prompted on your command line.';
     helpText = 'It will show you this help';
 
     options.CLI = new Option('CLI', cliText);

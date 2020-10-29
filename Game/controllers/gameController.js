@@ -76,10 +76,7 @@ module.exports = class GameController {
 
     moveLeft(robot) {
         let index = this.possibleAiming.indexOf(robot.actualAiming);
-        let newIndex = (index - 1) % this.possibleAiming.length;
-        if (newIndex < 0) {
-            newIndex = this.possibleAiming.length + newIndex;
-        }
+        let newIndex = (index - 1 + this.possibleAiming.length) % this.possibleAiming.length;
         robot.actualAiming = this.possibleAiming[newIndex];
         robot.lastAiming = this.possibleAiming[index];
         robot.movementsRemaining.shift();
@@ -108,4 +105,4 @@ module.exports = class GameController {
         return false;
     }
 
-}
+};

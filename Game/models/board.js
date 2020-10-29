@@ -13,4 +13,4 @@ module.exports = class Board {
         return this.finalY;
     }
 
-}
+};
