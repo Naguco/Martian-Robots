@@ -29,7 +29,11 @@ module.exports = class GameController {
     start() {
         let output = "";
         for (let i = 0; i < this.robots.length; i++) {
-            output += this.startRobot(this.robots[i]) + '\n';
+            if (output === "") {
+                output += this.startRobot(this.robots[i]);
+            } else {
+                output += '\n' + this.startRobot(this.robots[i]);
+            }
         }
         return output;
     }
