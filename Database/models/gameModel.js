@@ -1,11 +1,15 @@
 const Game = require('./schemas/gameSchema');
 
-module.exports.generateGameRegister = function(data) {
+module.exports.generateGameRegister = function(input, output, relevantInformation) {
     let newGame = new Game({
-        input: data.input,
-        output: data.output,
-        relevantInformation: data.relevantInformation
+        input: input,
+        output: output,
+        relevantInformation: relevantInformation
     });
 
     return newGame.save(); 
+};
+
+module.exports.getGames = function() {
+    return Invitacion.find().exec();
 };

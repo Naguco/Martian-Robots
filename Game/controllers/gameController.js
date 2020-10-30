@@ -10,6 +10,10 @@ module.exports = class GameController {
         this.possibleAiming = GameConfig.possibleAiming;
         this.possibleForwards = GameConfig.possibleForwards; // North, east, south, west respectively
         this.boardLimitsSaved = [];
+        this.relevantInformation = {
+            robotsLost: 0,
+            surfaceExplored: []
+        };
     }
 
     initializeRobots(robotsArray) {
@@ -61,6 +65,9 @@ module.exports = class GameController {
     
             if (this.checkFall(robot)) {
                 robot.lost = true;
+                this.relevantInformation.robotsLost++;
+            } else {
+                this.saveSurfaceExplored(robot);
             }
 
         }
@@ -104,6 +111,14 @@ module.exports = class GameController {
                 return true;
         }
         return false;
+    }
+
+    saveSurfaceExplored(robot) {
+
+        if (!this.relevantInformation.surfaceExplored.includes(robot.actualCoordinates)) {
+            this.relevantInformation.surfaceExplored.push(robot.actualCoordinates);
+        }
+        
     }
 
 };
