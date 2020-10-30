@@ -6,6 +6,7 @@ module.exports = function startCLI() {
       properties: {
         data: {
           message: 'Insert your data. (Take care with the \\n\ and whitespaces)',
+          type: 'string',
           required: true
         }
       }
@@ -16,7 +17,11 @@ module.exports = function startCLI() {
   prompt.start();
 
   prompt.get(schema, function (err, result) {
-      let output = game.startGame(schema.data);
+      let data = result.data;
+      while (data.includes("\\n")) {
+        data = data.replace("\\n", "\n");
+      }
+      let output = game.startGame(data);
       console.log(output);
   });
 };
