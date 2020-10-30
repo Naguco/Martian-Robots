@@ -1,4 +1,5 @@
 const GameController = require('./controllers/gameController');
+const GameStatisticsController = require('./controllers/gameStatisticsController');
 const GameConfig = require('./Config/gameConfig');
 const convertData = require('./helpers/dataConversion');
 const isValid = require('./helpers/dataValidator');
@@ -23,6 +24,11 @@ module.exports = class Game {
         } else {
             return GameConfig.errorInputMessage;
         }
+    }
+
+    async retrieveGameStatistics(option) {
+        let gStatisticsController = new GameStatisticsController();
+        return await gStatisticsController.optionsGameStatistics(option);
     }
 
 };

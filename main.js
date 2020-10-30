@@ -12,7 +12,6 @@ async function main () {
 
         const args = process.argv.slice(2);
 
-
         switch (args[0]) {
             case "CLI":
                 startCLI();

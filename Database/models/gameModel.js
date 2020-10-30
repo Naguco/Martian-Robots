@@ -12,5 +12,5 @@ module.exports.generateGameRegister = function(input, output, relevantInformatio
 };
 
 module.exports.getGames = function() {
-    return Invitacion.find().exec();
+    return Game.find().exec();
 };
