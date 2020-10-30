@@ -35,6 +35,7 @@ module.exports = class GameController {
     }
 
     startRobot(robot) {
+        this.saveSurfaceExplored(robot);
         while (robot.movementsRemaining.length > 0 && !robot.lost) {
             switch (robot.movementsRemaining[0]) {
                 case 'F':
@@ -114,11 +115,19 @@ module.exports = class GameController {
     }
 
     saveSurfaceExplored(robot) {
-
-        if (!this.relevantInformation.surfaceExplored.includes(robot.actualCoordinates)) {
-            this.relevantInformation.surfaceExplored.push(robot.actualCoordinates);
+        if (!this.isSurfaceExplored(robot)) {
+            this.relevantInformation.surfaceExplored.push([robot.actualCoordinates[0], robot.actualCoordinates[1]]);
         }
-        
+    }
+
+    isSurfaceExplored(robot) {
+        for (let i = 0; i < this.relevantInformation.surfaceExplored.length; i++) {
+            if (this.relevantInformation.surfaceExplored[i][0] == robot.actualCoordinates[0] && 
+                this.relevantInformation.surfaceExplored[i][1] == robot.actualCoordinates[1]) {
+                    return true;
+                }
+        }
+        return false;
     }
 
 };
