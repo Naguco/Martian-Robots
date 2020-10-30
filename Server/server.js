@@ -12,7 +12,7 @@ module.exports = function startServer() {
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
 
-    app.use('/api', require('./routes/routes.js'));
+    app.use('', require('./routes/routes.js'));
 
     app.listen(process.env.PORT, () => { console.log('Escuchando puerto: ', process.env.PORT); });
 
