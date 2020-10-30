@@ -1,26 +1,41 @@
 const startServer = require('./Server/server');
 const startScript = require('./Script/script');
 const startCLI = require('./Cli/cli');
+const startDatabaseInstance = require('./Database/database');
 
-const args = process.argv.slice(2);
 
-switch (args[0]) {
-    case "CLI":
-        startCLI();
-        break;
-    case "REST":
-        startServer();
-        break;
-    case "SCRIPT":
-        startScript(args[1]);
-        break;
-    case "help":
-        showHelp();
-        break;
-    default:
-        console.log(args[0] + " is not a valid argument. Please insert 'CLI', 'REST' or 'SCRIPT'.\nIf you need help you can also type 'help'.");
-        break;
+async function main () {
+
+    let connected = await startDatabaseInstance();
+
+    if (connected) {
+
+        const args = process.argv.slice(2);
+
+        switch (args[0]) {
+            case "CLI":
+                startCLI();
+                break;
+            case "REST":
+                startServer();
+                break;
+            case "SCRIPT":
+                startScript(args[1]);
+                break;
+            case "help":
+                showHelp();
+                break;
+            default:
+                console.log(args[0] + " is not a valid argument. Please insert 'CLI', 'REST' or 'SCRIPT'.\nIf you need help you can also type 'help'.");
+                break;
+        }
+
+    } else {
+        console.log("Database not connected properly, please check documentation for more information.");
+    }
+
 }
+
 
 function Option(argument, description) {
     this.Argument = argument;
@@ -44,3 +59,5 @@ function showHelp() {
     console.table(options);
 
 }
+
+main();

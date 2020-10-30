@@ -19,7 +19,6 @@ function convertBoardCoordinates(firstLine) {
 }
 
 function convertRobots(restLines) {
-
     let array = [];
 
     if (restLines.length % 2 == 0) {
@@ -35,7 +34,5 @@ function convertRobots(restLines) {
         }
 
         return array;
-    } else {
-        // Lanzar error de que no se han introducido el par de [PosicionInicial + Donde apunta, MovimientosDelRobot] correctamente.
     }
 }
