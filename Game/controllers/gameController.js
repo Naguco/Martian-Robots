@@ -1,13 +1,14 @@
 const Board = require('../models/board');
 const Robot = require('../models/robot');
+const GameConfig = require('../Config/gameConfig');
 
 module.exports = class GameController {
 
     constructor(finalBoardCoordinates, robotsArray) {
         this.board = new Board(finalBoardCoordinates[0], finalBoardCoordinates[1]);
         this.robots = this.initializeRobots(robotsArray);
-        this.possibleAiming = ['N', 'E', 'S', 'W'];
-        this.possibleForwards = [[0, 1], [1, 0], [0, -1], [-1, 0]]; // North, east, south, west respectively
+        this.possibleAiming = GameConfig.possibleAiming;
+        this.possibleForwards = GameConfig.possibleForwards; // North, east, south, west respectively
         this.boardLimitsSaved = [];
     }
 
