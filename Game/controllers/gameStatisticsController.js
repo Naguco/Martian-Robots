@@ -10,6 +10,9 @@ module.exports = class GameStatisticsController {
             case 0: // Get all games
                 data = await this.retrieveLastGamesPlayed();
                 break;
+            case 1: // Get total number of robots lost
+                data = await this.retrieveTotalRobotsLost();
+                break;
         }
 
         return data;
@@ -24,6 +27,21 @@ module.exports = class GameStatisticsController {
                 return GameConfig.messageNoGamesPlayed;
             }
         } catch (err) {
+            return GameConfig.errorGetGameData;
+        }
+    }
+
+    async retrieveTotalRobotsLost() {
+        try {
+            let gamesPlayed = await GameModelDatabase.getGames();
+            let robotsLost = 0;
+            if (gamesPlayed) {
+                for (let i = 0; i < gamesPlayed.length; i++) {
+                    robotsLost += gamesPlayed[i].relevantInformation.robotsLost;
+                }
+            }
+            return robotsLost;
+        } catch(err) {
             return GameConfig.errorGetGameData;
         }
     }
