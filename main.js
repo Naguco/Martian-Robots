@@ -14,7 +14,7 @@ async function main () {
 
         switch (args[0]) {
             case "CLI":
-                startCLI();
+                startCLI(args[1]);
                 break;
             case "REST":
                 startServer();
