@@ -6,11 +6,17 @@ const startDatabaseInstance = require('./Database/database');
 
 async function main () {
 
-    let connected = await startDatabaseInstance();
+    let connected;
+    const args = process.argv.slice(2);
+
+    if (args[0] === 'help') {
+        showHelp();
+        return;
+    }
+
+    connected = await startDatabaseInstance();
 
     if (connected) {
-
-        const args = process.argv.slice(2);
 
         switch (args[0]) {
             case "CLI":
@@ -20,10 +26,7 @@ async function main () {
                 startServer();
                 break;
             case "SCRIPT":
-                startScript(args[1]);
-                break;
-            case "help":
-                showHelp();
+                startScript();
                 break;
             default:
                 console.log(args[0] + " is not a valid argument. Please insert 'CLI', 'REST' or 'SCRIPT'.\nIf you need help you can also type 'help'.");
@@ -49,7 +52,7 @@ function showHelp() {
     cliText = 'Start this project as a CLI. Command Line will ask you for an input, and inmediately will prompt you the solution.';
     restText = 'Start a localhost server at port 3000. With a post method to http://localhost:3000/api/RobotsGame with a body that contains the data like { data: "your_input_goes_here"}.';
     scriptText = 'Send your input in the second argument of the script execution. The output will be prompted on your command line.';
-    helpText = 'It will show you this help';
+    helpText = 'It will show you this help. For more information visit: https://github.com/Naguco/Martian-Robots';
 
     options.CLI = new Option('CLI', cliText);
     options.REST = new Option('REST', restText);
