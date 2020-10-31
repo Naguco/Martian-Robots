@@ -4,7 +4,7 @@ This problem has been fully solved by Francisco Gubbins Corral.
 
 ## Table of contents
 
-- [How to run this project](#how)
+- [How to run this project](#how-to-run-this-project)
   * [1. HTTP - REST Solution](#1.)
     + [1.1. Endpoints](#1.1.)
 
