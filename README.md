@@ -2,6 +2,12 @@
 Martian Robots it's a project that solves the problem suggested by the Guidesmiths IT Recruiter department.
 This problem has been fully solved by Francisco Gubbins Corral.
 
+## Table of contents
+
+- [How to run this project](#how)
+  * [1. HTTP - REST Solution](#1.)
+    + [1.1. Endpoints](#1.1.)
+
 ## How to run this project
 You have two options to play this Martian Robots game and test this project.
 
