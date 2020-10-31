@@ -5,9 +5,9 @@ This problem has been fully solved by Francisco Gubbins Corral.
 ## Table of contents
 
 - [How to run this project](#how-to-run-this-project)
-  * [1 HTTP - REST Solution](#public-http:-rest-solution)
-    + [1.1 Endpoints](#1.1-endpoints:)
-    + [1.2 Data accepted](#1.2-data-accepted:)
+  * [1 HTTP - REST Solution](#public-http-rest-solution)
+    + [1.1 Endpoints](#1.1-endpoints)
+    + [1.2 Data accepted](#1.2-data-accepted)
     + [1.3 Examples](#1.3-examples)
   * [2 Installing it in your device](#installing-it-in-your-device)
     + [2.1 Previous instalations](#2.1-previous-instalations)
