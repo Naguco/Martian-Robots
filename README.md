@@ -78,7 +78,7 @@ Once you have completed all the instalations, now we can start to run our game.
 
 ### 2.2.1 First steps:
 
-Open your preferred CLI and go to the directory that contains the project. Make sure that you are in the same level as "package.json".
+Open your preferred CLI and go to the directory that contains the project ("Martian-Robots/"). Make sure that you are in the same level as "package.json".
 
 Run the following command:
 ```bash
@@ -117,8 +117,30 @@ module.exports = async function startDatabaseInstance() {
 
 };
 ```
+__If you are having problems while trying to use your own mongoDB database, please use the public one.__
+
 ### 2.2.2 Running the project:
 
+With your preferred CLI, go to the project directory ("Martian-Robots/").
+
+Now you have to decide if you want to run it as a CLI, as a Script or as an API Rest.
+
+### 2.2.2.1 As a Script:
+
+To run this project as a Script just run this command:
+```bash
+node MartianRobots SCRIPT
+```
+The output will be: the game execution output, the past executions output and how many robots are lost in total in all the games played.
+
+To change the input you have to go to "/Script/config/scriptConfig.js" and change the stringInput variable with your own input.
+
+Example input (/Script/config/scriptConfig.js"):
+```javascript
+module.exports.stringInput = "5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL";
+```
+
+### 2.2.2.2 As a CLI:
 
 
 
