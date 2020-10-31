@@ -9,7 +9,7 @@ You have two options to play this Martian Robots game and test this project.
 
 First of all save this link, you will need it for the next steps: https://martian-robots-fgc.herokuapp.com/
 
-Install a tool that allows you to make POST requests to a HTTP endpoint. In my case, I will use [Postman] (https://www.postman.com/downloads/).
+Install a tool that allows you to make POST requests to a HTTP endpoint. In my case, I will use [Postman](https://www.postman.com/downloads/).
 
 You have available the next endpoints:
 HTTP Method | Endpoint | Description
