@@ -57,8 +57,8 @@ If you want to send it in a JSON format:
 
 As you can see, you have to take much care while building your input. "Whitespaces" and "\n" are crucial.
 
-Example 1: ![Imagen en JSON](https://i.postimg.cc/7hYgV0Dm/POST-JSON.png)
-Example 2: ![Imagen en urlencoded](https://i.postimg.cc/8CSf4MmM/POST-NO-JSON.png)
+__Example 1:__ ![Imagen en JSON](https://i.postimg.cc/7hYgV0Dm/POST-JSON.png)
+__Example 2:__ ![Imagen en urlencoded](https://i.postimg.cc/8CSf4MmM/POST-NO-JSON.png)
 
 
 
