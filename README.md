@@ -17,6 +17,8 @@ This problem has been fully solved by Francisco Gubbins Corral.
       - 2.2.2. Choosing execution type
         * 2.2.2.1. As a Script
         * 2.2.2.2. As a CLI
+        * 2.2.2.3. As an API REST
+    + 2.3. Testing the project.
         
 ## How to run this project
 You have two options to play this Martian Robots game and test this project.
@@ -175,10 +177,24 @@ getAllGames | ```node MartianRobots CLI getAllGames``` | Displays all past games
 help | ```node MartianRobots CLI help``` | Shows CLI available commands.
 
 
+### 2.2.2.3. As an API REST
 
+To run this project as an API REST just run this command:
+```bash
+node MartianRobots REST
+```
+Wait until the process notifies you that database is connected and the express process is listening on port 3000.
 
+The process is the same like Public HTTP Rest solution, but the endpoints are a little bit different because they are running in localhost.
 
+HTTP Method | Endpoint | Description
+----------- | -------- | -----------
+GET | http://localhost:3000/ | Simple and basic welcome message on visiting page.
+GET | http://localhost:3000/RobotsGame/games | Retrieve all the succesfull games done.
+GET | http://localhost:3000/RobotsGame/robotsLost | Retrieve all the total robots that have been lost in all games.
+POST | http://localhost:3000/RobotsGame | Request that starts a new game instance.
 
+Follow the steps on 1.2. to learn how to send data to an HTTP Endpoint.
 
-
+### 2.3. Testing the project.
 
