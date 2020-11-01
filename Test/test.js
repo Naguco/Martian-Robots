@@ -10,7 +10,7 @@ describe('Martian-Robots Project', () => {
     describe('POST /', () => {
         it('It has to return the output correctly of the game execution', (done) => {
             const data = { data: "5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL" };
-            chai.request(testConfig.testURLPrivate)
+            chai.request(testConfig.testURLPublic)
                 .post('/RobotsGame')
                 .send(data)
                 .end((err, res) => {
@@ -26,7 +26,7 @@ describe('Martian-Robots Project', () => {
     describe('POST /', () => {
         it('It has to return that the input is invalid', (done) => {
             const data = { data: "5\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL" };
-            chai.request(testConfig.testURLPrivate)
+            chai.request(testConfig.testURLPublic)
                 .post('/RobotsGame')
                 .send(data)
                 .end((err, res) => {
