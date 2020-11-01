@@ -4,6 +4,10 @@ module.exports = async function startCLI(secondArgument) {
     if (secondArgument) {
         let cliController = new CLIController();
         let output = await cliController.checkOption(secondArgument);
-        console.log("---------------- Output ----------------\n" + output);
+        if (output) {
+            console.log("---------------- Output ----------------\n" + output);
+        }
     }
+
+    process.exit(1);
 };

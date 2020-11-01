@@ -18,6 +18,9 @@ module.exports = class CLIController {
             case 'getAllGames':
                 output = await this.getAllGames();
                 break;
+            case 'help':
+                output = await this.showHelp();
+                break;    
             default:
                 output = this.sendInputToGame(option);
                 break;
@@ -48,5 +51,18 @@ module.exports = class CLIController {
             console.log('An error ocurred while your petition. Please check documentation.');
         }
     }
+
+    showHelp() {
+
+        console.log("------------ Available commands: ------------\n");
+        console.log("totalRobotsLost:", "\tShows the total of robots lost since first game played.\n");
+        console.log("getAllGames", "\t\tDisplays all past games in a JSON format.\n");
+        console.log("'yourInput'", "\t\tIf your input is correct, the output will be the game solution.\n");
+        console.log("Example input: \t\tnode MartianRobots CLI '5 3\\n1 1 E\\nRFRFRFRF\\n3 2 N\\nFRRFLLFFRRFLL\\n0 3 W\\nLLFFFLFLFL'\n");
+        console.log("---------------------------------------------");
+
+    }
+
+
 
 };
