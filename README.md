@@ -198,3 +198,23 @@ Follow the steps on 1.2. to learn how to send data to an HTTP Endpoint.
 
 ### 2.3. Testing the project.
 
+You can test if the outputs are correct or not.
+
+For probe it, you have to go to "Test/test.js" and copy and paste the first function ("It has to return the output correctly of the game execution") as many input test you want to do.
+
+Substitute on variable data your data input and in
+```javascript
+res.body.should.have.property('output').eql('1 1 E\n3 3 N LOST\n2 3 S');
+```
+substitute on eql() function the data output expected.
+
+Save and run the command:
+```bash
+npm test
+```
+
+
+
+
+
+----------------------------------------------------------

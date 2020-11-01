@@ -16,7 +16,6 @@ describe('Martian-Robots Project', () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('output').eql('1 1 E\n3 3 N LOST\n2 3 S');
-
                     done();
                 });
         });
