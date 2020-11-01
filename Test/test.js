@@ -1,30 +1,11 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const GameSchema = require('../Database/models/schemas/gameSchema');
 const testConfig = require('./config/testConfig');
-const startDatabaseInstance = require('../Database/database');
 const should = chai.should();
 
 chai.use(chaiHttp);
 
-startDatabaseInstance();
-
 describe('Martian-Robots Project', () => {
-    beforeEach((done) => {
-        GameSchema.remove({}, (err) => { done(); }); // Cleaning database
-    });
-
-    describe('GET /RobotsGame/games', () => {
-        it('It has to return the message that there are no games played', (done) => {
-            chai.request(testConfig.testURLPrivate)
-                .get('/RobotsGame/games')
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.have.property('output').eql('No games played at the moment.');
-                    done();
-                });
-        });
-    });
 
     describe('POST /', () => {
         it('It has to return the output correctly of the game execution', (done) => {
@@ -35,6 +16,7 @@ describe('Martian-Robots Project', () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('output').eql('1 1 E\n3 3 N LOST\n2 3 S');
+
                     done();
                 });
         });
