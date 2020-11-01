@@ -73,8 +73,10 @@ If you want to send it as a JSON format:
 
 As you can see, you have to take much care while building your input. "Whitespaces" and "\n" are crucial.
 
-__Example 1:__ ![Imagen en JSON](https://i.postimg.cc/7hYgV0Dm/POST-JSON.png)
-__Example 2:__ ![Imagen en urlencoded](https://i.postimg.cc/8CSf4MmM/POST-NO-JSON.png)
+__Example 1:__
+![Imagen en JSON](https://i.postimg.cc/7hYgV0Dm/POST-JSON.png)
+__Example 2:__
+![Imagen en urlencoded](https://i.postimg.cc/8CSf4MmM/POST-NO-JSON.png)
 
 
 ### 2. Installing it in your device
@@ -157,6 +159,20 @@ module.exports.stringInput = "5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\
 ```
 
 ### 2.2.2.2. As a CLI
+
+To run this project as a CLI just run this command:
+```bash
+node MartianRobots CLI "5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL"
+```
+
+You have this available commands:
+
+Command | Example | Description
+----------- | -------- | -----------
+totalRobotsLost | ```bash node MartianRobots CLI totalRobotsLost``` | Shows the total of robots lost since first game played.
+getAllGames | ```bash node MartianRobots CLI getAllGames``` | Displays all past games in a JSON format.
+'yourInput' | ```bash node MartianRobots CLI '5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL'``` | If your input is correct, the output will be the game solution.
+help | ```bash node MartianRobots CLI help``` | Shows CLI available commands.
 
 
 
