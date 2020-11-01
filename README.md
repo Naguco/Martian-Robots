@@ -169,10 +169,12 @@ You have this available commands:
 
 Command | Example | Description
 ----------- | -------- | -----------
-totalRobotsLost | ```bash node MartianRobots CLI totalRobotsLost``` | Shows the total of robots lost since first game played.
-getAllGames | ```bash node MartianRobots CLI getAllGames``` | Displays all past games in a JSON format.
-'yourInput' | ```bash node MartianRobots CLI '5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL'``` | If your input is correct, the output will be the game solution.
-help | ```bash node MartianRobots CLI help``` | Shows CLI available commands.
+totalRobotsLost | ```node MartianRobots CLI totalRobotsLost``` | Shows the total of robots lost since first game played.
+getAllGames | ```node MartianRobots CLI getAllGames``` | Displays all past games in a JSON format.
+'yourInput' | ```node MartianRobots CLI '5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL'``` | If your input is correct, the output will be the game solution.
+help | ```node MartianRobots CLI help``` | Shows CLI available commands.
+
+
 
 
 
