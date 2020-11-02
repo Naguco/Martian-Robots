@@ -1,5 +1,9 @@
 const CLIController = require('./controllers/cliController');
 
+/**
+ * Function that starts the CLI process.
+ * @param {any} secondArgument Second argument of the execution.
+*/
 module.exports = async function startCLI(secondArgument) {
     if (secondArgument) {
         let cliController = new CLIController();

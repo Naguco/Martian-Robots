@@ -1,3 +1,6 @@
+/**
+ * Function that starts express server instance for listen in port 3000.
+*/
 module.exports = function startServer() {
 
     require('./serverConfig.js');

@@ -1,3 +1,4 @@
+// File that contains all the configurations of the game.
 module.exports.possibleAiming = ['N', 'E', 'S', 'W'];
 module.exports.possibleInstructions = ['R', 'L', 'F'];
 module.exports.possibleForwards = [[0, 1], [1, 0], [0, -1], [-1, 0]];

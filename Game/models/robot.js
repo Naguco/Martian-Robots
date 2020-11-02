@@ -1,3 +1,6 @@
+/**
+ * Robot class
+ */
 module.exports = class Robot {
 
     constructor (firstCoordinates, firstAiming, movements) {

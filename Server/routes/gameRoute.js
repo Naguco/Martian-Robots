@@ -5,6 +5,8 @@ const LandingPageController = require('../controllers/landingPageController');
 
 const app = express();
 
+
+// Routes definitions
 app.get('', LandingPageController.landingPage);
 app.post('/RobotsGame', GameController.startGame);
 app.get('/RobotsGame/games', GameStatisticsController.getGames);

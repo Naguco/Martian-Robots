@@ -1,3 +1,6 @@
+/**
+ * Board class
+*/
 module.exports = class Board {
 
     constructor(finalX, finalY) {

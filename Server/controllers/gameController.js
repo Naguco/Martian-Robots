@@ -1,5 +1,11 @@
 const Game = require('../../Game/game');
 
+
+/**
+ * Function that calls game to start it.
+ * @param {Object} req express require.
+ * @param {Object} res express response.
+ */
 exports.startGame = async function(req, res) {
     try {
 

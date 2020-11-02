@@ -3,6 +3,9 @@ const startScript = require('./Script/script');
 const startCLI = require('./Cli/cli');
 const startDatabaseInstance = require('./Database/database');
 
+/**
+ * Main body of the project.
+*/
 
 async function main () {
 
@@ -39,12 +42,19 @@ async function main () {
 
 }
 
-
+/**
+ * Generates an option object for showing help
+ * @param {string} argument 
+ * @param {string} description 
+*/
 function Option(argument, description) {
     this.Argument = argument;
     this.Description = description;
 }
 
+/**
+ * Displays a table in console with all the help and options of the main project.
+*/
 function showHelp() {
 
     var options = {};
@@ -63,4 +73,8 @@ function showHelp() {
 
 }
 
+
+/**
+ * Main project call.
+ */
 main();

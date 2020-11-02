@@ -1,3 +1,4 @@
+// This file contains the game schema to save in the mongoDB database.
 const mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;

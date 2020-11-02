@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const DatabaseConfig = require('./databaseConfig');
 
+/**
+ * Function that starts the mongoose instance
+ * @returns {boolean} True if connected.
+ */
 module.exports = async function startDatabaseInstance() {
 
     console.log("Trying to connect to database, please wait.");

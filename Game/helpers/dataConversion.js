@@ -1,3 +1,9 @@
+
+/**
+ * Parse string input to JSON object.
+ * @param {string} data Input data.
+ * @returns {Object} Parsed data.
+*/
 module.exports = function convertData(data) {
     let dataConverted = {};
 
@@ -11,6 +17,11 @@ module.exports = function convertData(data) {
     return dataConverted;
 };
 
+/**
+ * Function that converst first line of data input to a pair of coordinates array.
+ * @param {string} firstLine String that contains two numbers in string format.
+ * @returns {Array<number>} Pair of corrdinates.
+*/
 function convertBoardCoordinates(firstLine) {
     let array = firstLine.split(/\s+/);
     array[0] = parseInt(array[0]);
@@ -18,6 +29,11 @@ function convertBoardCoordinates(firstLine) {
     return array;
 }
 
+/**
+ * Function that convert robots information from string to an object array.
+ * @param {string} restLines Rest of the lines of the data input.
+ * @returns {Array<Object>} returns the robots parsed to json object.
+*/
 function convertRobots(restLines) {
     let array = [];
 

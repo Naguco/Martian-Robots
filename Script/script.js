@@ -1,6 +1,10 @@
 const ScriptConfig = require('./config/scriptConfig');
 const Game = require('../Game/game');
 
+
+/**
+ * Function that starts the Script.
+*/
 module.exports = async function startScript() {
     let game = new Game();
 

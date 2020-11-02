@@ -1,7 +1,14 @@
 const Game = require('../../Game/game');
-
+/**
+ * Class CLI Controller.
+*/
 module.exports = class CLIController {
 
+    /**
+     * Function that converts data input to the correct format.
+     * @param {string} data Data input of the second argument.
+     * @returns {string} data parsed correctly.
+    */
     parseData(data) {
         while (data.includes("\\n")) {
             data = data.replace("\\n", "\n");
@@ -9,6 +16,11 @@ module.exports = class CLIController {
         return data;
     }
 
+    /**
+     * Function that checks what option has introduced the user on the CLI.
+     * @param {any} option CLI Option.
+     * @returns {any} Output of the execution.
+     */
     async checkOption(option) {
         let output;
         switch(option) {
@@ -28,20 +40,35 @@ module.exports = class CLIController {
         return output;
     }
 
+    /**
+     * Function that starts the game.
+     * @param {string} data Data input expected by the game.
+     * @returns {any} Output of the game execution.
+    */
     sendInputToGame(data) {
         let game = new Game();
         let parsedData = this.parseData(data);
         return game.startGame(parsedData);
     }
 
+    /**
+     * @returns {any} Output of the execution of getting all the last games.
+    */
     async getAllGames() {
         return await this.getGameStatistics(0);
     }
 
+    /**
+     * @returns {any} Output of the execution of getting all the robots lost.
+    */
     async getTotalRobotsLost() {
         return await this.getGameStatistics(1);
     }
 
+    /**
+     * Function that selects what type of statistics you want to get.
+     * @param {number} option 0 or 1.
+    */
     async getGameStatistics(option) {
         try {
             let game = new Game();
@@ -52,6 +79,9 @@ module.exports = class CLIController {
         }
     }
 
+    /**
+     * Function that retrieves help for CLI.
+    */
     showHelp() {
 
         console.log("------------ Available commands: ------------\n");
